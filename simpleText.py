@@ -2,8 +2,10 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route("/skill", methods=["POST"])
+@app.route('/skill', methods=['POST'])
 def skill():
+    data = request.get_json()
+    
     data = {
         "version" : "2.0",
         "template" : {
